@@ -4,8 +4,10 @@ const handlebars = require('handlebars');
 
 module.exports = (options, callback) => {
   var compiled;
+  var templateSpec;
   try {
-    compiled = handlebars.precompile(options.template);
+    templateSpec = handlebars.precompile(options.template);
+    compiled = handlebars.template(templateSpec, []);
   } catch (err) {
     return callback(err);
   }

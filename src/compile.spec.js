@@ -10,6 +10,9 @@ describe('compile method', () => {
     test('should correctly invoke handlebars precompile method', () => {
       expect(handlebars.precompile).toBeCalledWith(template);
     });
+    test('should correctly invoke handlebars template method', () => {
+      expect(handlebars.template).toBeCalled();
+    });
     test('should correctly invoke the callback', () => {
       expect(callback).toBeCalled();
     });
